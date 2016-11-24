@@ -30,8 +30,6 @@ namespace BoersenBeispiel
             Int64 pz = 7 - dr % 7;
 
             pz = pz * 10000000000;
-
-            //cout << pz << endl;
             pz = pz + _kontonummer;
 
             string pruefZiffer = pz.ToString();
@@ -53,7 +51,8 @@ namespace BoersenBeispiel
         public string address { get; set; }
         public string location { get; set; }
         public string telephoneNr { get; set; }
-        Depot depot { get; set; }
+
+        // Ein Depot pro Customer
 
         public Customer(string _firstname, string _lastname, string _birthdate, string _address, string _location, string _telephoneNr)
         {
