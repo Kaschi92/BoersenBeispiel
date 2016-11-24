@@ -1,0 +1,6 @@
+c:\users\kaschi\documents\visual studio 2015\Projects\BoersenBeispiel\BoersenBeispiel\bin\Debug\BoersenBeispiel.exe.config
+C:\Users\Kaschi\Documents\Visual Studio 2015\Projects\BoersenBeispiel\BoersenBeispiel\bin\Debug\BoersenBeispiel.exe
+C:\Users\Kaschi\Documents\Visual Studio 2015\Projects\BoersenBeispiel\BoersenBeispiel\bin\Debug\BoersenBeispiel.pdb
+C:\Users\Kaschi\Documents\Visual Studio 2015\Projects\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.csprojResolveAssemblyReference.cache
+C:\Users\Kaschi\Documents\Visual Studio 2015\Projects\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.exe
+C:\Users\Kaschi\Documents\Visual Studio 2015\Projects\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.pdb
