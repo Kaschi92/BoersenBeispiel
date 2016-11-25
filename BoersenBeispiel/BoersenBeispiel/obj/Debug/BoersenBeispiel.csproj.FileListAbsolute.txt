@@ -10,3 +10,6 @@ C:\Users\Kaschi\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel
 C:\Users\Kaschi\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\bin\Debug\BoersenBeispiel.exe
 C:\Users\Kaschi\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\bin\Debug\BoersenBeispiel.pdb
 C:\Users\Kaschi\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.csprojResolveAssemblyReference.cache
+C:\Users\Wiesorium\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\bin\Debug\BoersenBeispiel.exe.config
+C:\Users\Wiesorium\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.exe
+C:\Users\Wiesorium\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.pdb
