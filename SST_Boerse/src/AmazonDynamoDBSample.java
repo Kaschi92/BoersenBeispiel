@@ -188,7 +188,7 @@ public class AmazonDynamoDBSample {
 		
 	}
 
-	private static ScanResult scan(String tableName){
+	public static ScanResult scan(String tableName){
 //      /*    Query     */
 
       // Scan items for movies with a year attribute greater than 1985
@@ -217,7 +217,7 @@ public class AmazonDynamoDBSample {
         
     }
     
-    private static void createTable(String _tablename, CreateTableRequest _createTableRequest) throws Exception
+    public static void createTable(String _tablename, CreateTableRequest _createTableRequest) throws Exception
     {
     	System.out.println("\n*** Creating table "+ _tablename + " ***");
 
