@@ -41,11 +41,6 @@ namespace BoersenBeispiel
         }
     }
 
-    public class Bank
-    {
-        
-    }
-
     public class Customer
     {
         public string firstname { get; set; }
