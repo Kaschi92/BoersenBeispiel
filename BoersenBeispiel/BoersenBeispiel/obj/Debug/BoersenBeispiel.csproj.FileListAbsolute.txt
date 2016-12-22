@@ -13,3 +13,11 @@ C:\Users\Kaschi\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel
 C:\Users\Wiesorium\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\bin\Debug\BoersenBeispiel.exe.config
 C:\Users\Wiesorium\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.exe
 C:\Users\Wiesorium\Documents\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.pdb
+D:\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\bin\Debug\BoersenBeispiel.exe.config
+D:\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.exe
+D:\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.pdb
+D:\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\bin\Debug\BoersenBeispiel.exe
+D:\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\bin\Debug\BoersenBeispiel.pdb
+D:\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\bin\Debug\Newtonsoft.Json.dll
+D:\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\bin\Debug\Newtonsoft.Json.xml
+D:\GitHub\BoersenBeispiel\BoersenBeispiel\BoersenBeispiel\obj\Debug\BoersenBeispiel.csprojResolveAssemblyReference.cache
