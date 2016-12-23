@@ -15,7 +15,7 @@ namespace BoersenBeispiel
         {
             // Initialisiert die aktienIDs für die Verkäufer
 
-            // Für 1 Externen Customer
+            // Für 1 Externen Customer Aktionen
             List<Aktie> externCust1List = _externCust1.depot.getUserAktienList();
 
             _externCust1.depot.showAktien(_externURL, 0);
@@ -26,8 +26,24 @@ namespace BoersenBeispiel
             externCust1List.Add(new Aktie(name, Guid.Parse(id), 1, 180));
             _externCust1.depot.setUserAktienList(externCust1List);
 
-            // Für die 3 Internen Customer
-            // TODO
+            // Für die 3 Internen Customer Aktionen
+            List<Aktie> internCust1List = _internCust1.depot.getUserAktienList();
+            List<Aktie> internCust2List = _internCust2.depot.getUserAktienList();
+            List<Aktie> internCust3List = _internCust3.depot.getUserAktienList();
+
+            _internCust1.depot.showAktien(_internURL, 0);
+            availableAktienList = _internCust1.depot.getAvailableAktienList();
+            splittedString = availableAktienList[0].Split(';');
+            name = splittedString[0].Split(':')[1];
+            id = splittedString[1].Split(':')[1];
+
+            internCust1List.Add(new Aktie(name, Guid.Parse(id), 1, 300));
+            internCust2List.Add(new Aktie(name, Guid.Parse(id), 1, 290));
+            internCust3List.Add(new Aktie(name, Guid.Parse(id), 1, 310));
+
+            _internCust1.depot.setUserAktienList(internCust1List);
+            _internCust2.depot.setUserAktienList(internCust2List);
+            _internCust3.depot.setUserAktienList(internCust3List);
         }
 
         static void Main(string[] args)
@@ -35,11 +51,11 @@ namespace BoersenBeispiel
             string externURL1 = "https://boerse.pwnhofer.at";
             string internURL = "http://ec2-35-165-43-90.us-west-2.compute.amazonaws.com";
 
-            // Externe USER
+            // USER externe Aktionen
             Customer cust1 = new Customer("Stephanie", "Kaschnitz", "05.07.1992", "Testaddresse 1", "Salzburg", "06641234567");
             Customer cust2 = new Customer("Christopher", "Wieland", "10.10.1993", "Testaddresse 2", "Salzburg", "06641278567");
 
-            // Interne USER
+            // USER interne Aktionen
             // Verkauf
             Customer cust3 = new Customer("Martin", "Wieser", "07.12.1991", "Testaddresse 3", "Salzburg", "06641279567");
             Customer cust4 = new Customer("John", "Doe", "21.11.1994", "Testaddresse 4", "Salzburg", "06641273453");
@@ -59,37 +75,59 @@ namespace BoersenBeispiel
             Aktie aktie = aktienList1[0];
             cust1.depot.gewinnVerlustRechnung(externURL1, aktie);
 
-            // Externer User Verkauf  
-            cust1.depot.sellAktien(externURL1, aktienList1[0].id.ToString(), 300, 1, aktienList1[0].name);
+            // User verkauft extern
+            verkauf(cust1, externURL1);
+
+            // User kauft extern
+            kauf(cust2, externURL1);
+
+            // 3 User verkaufen intern
+            verkauf(cust3, internURL);
+            verkauf(cust4, internURL);
+            verkauf(cust5, internURL);
+
+            // 3 User kaufen intern
+            kauf(cust6, internURL);
+            kauf(cust7, internURL);
+            kauf(cust8, internURL);
+
+            Console.ReadKey();
+        }
+
+        static void verkauf(Customer _cust, string _url)
+        {
+            List<Aktie> aktienList = _cust.depot.getUserAktienList();
+            _cust.depot.sellAktien(_url, aktienList[0].id.ToString(), 400, 1, aktienList[0].name);
 
             // OrderCheck
             string orderID = null;
-            List<string> orderList = cust1.depot.getUserOrderList();
+            List<string> orderList = _cust.depot.getUserOrderList();
             foreach (string s in orderList)
             {
-                if (s.Contains(aktienList1[0].id.ToString()))
+                if (s.Contains(aktienList[0].id.ToString()))
                 {
                     string[] splittedOrderString = s.Split(';');
                     orderID = splittedOrderString[1].Split(':')[1];
                 }
             }
-            cust1.depot.orderCheck(externURL1, orderID, aktienList1[0].name, aktienList1[0].id.ToString(), cust1.account);
-  
+            _cust.depot.orderCheck(_url, orderID, aktienList[0].name, aktienList[0].id.ToString(), _cust.account);
+        }
 
-            // Externer user Kauf
-            cust2.depot.showAktien(externURL1, 1);
+        static void kauf(Customer _cust, string _url)
+        {
+            _cust.depot.showAktien(_url, 1);
 
             // Erste Aktie auswählen und kaufen
-            List<string> availableAktienList = cust2.depot.getAvailableAktienList();
+            List<string> availableAktienList = _cust.depot.getAvailableAktienList();
             string[] splittedString = availableAktienList[0].Split(';');
             string name = splittedString[0].Split(':')[1];
             string id = splittedString[1].Split(':')[1];
 
-            cust2.depot.buyAktien(externURL1, id, 300, 1, name);
+            _cust.depot.buyAktien(_url, id, 300, 1, name);
 
             // OrderCheck
-            orderID = null;
-            orderList = cust2.depot.getUserOrderList();
+            string orderID = null;
+            List<string> orderList = _cust.depot.getUserOrderList();
             foreach (string s in orderList)
             {
                 if (s.Contains(id))
@@ -99,15 +137,7 @@ namespace BoersenBeispiel
                     name = splittedOrderString[0].Split(':')[1];
                 }
             }
-            cust2.depot.orderCheck(externURL1, orderID, name, id, cust2.account);
-
-            // 3 Interne User Verkauf
-            // TODO
-
-            // 3 Interne User Kauf
-            // TODO
-
-            Console.ReadKey();
+            _cust.depot.orderCheck(_url, orderID, name, id, _cust.account);
         }
     }
 }
