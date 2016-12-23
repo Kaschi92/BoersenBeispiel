@@ -49,7 +49,7 @@ namespace BoersenBeispiel
         static void Main(string[] args)
         {
             string externURL1 = "https://boerse.pwnhofer.at";
-            string internURL = "http://ec2-35-165-43-90.us-west-2.compute.amazonaws.com";
+            string internURL = "http://ec2-35-165-217-150.us-west-2.compute.amazonaws.com:4000";
 
             // USER externe Aktionen
             Customer cust1 = new Customer("Stephanie", "Kaschnitz", "05.07.1992", "Testaddresse 1", "Salzburg", "06641234567");
